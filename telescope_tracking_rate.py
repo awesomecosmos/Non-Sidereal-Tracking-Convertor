@@ -37,17 +37,8 @@ def JPL_Querier(target_id,obs_code,date):
     JPL_astropy_tbl = Table(JPLtableData,names=JPL_colnames)
     track_rate_RA = eph['RA_rate']
     track_rate_Dec = eph['DEC_rate']
-    # print(JPL_astropy_tbl)
     print("Apparent Mag: ",eph['Tmag'][0])
     return JPL_astropy_tbl,track_rate_RA,track_rate_Dec
-
-
-
-# def rate_convertor(track_rate_RA,track_rate_Dec,unit_to_convert_to):
-#     converted_track_rate_RA = track_rate_RA.convert_unit_to(unit_to_convert_to)
-#     converted_track_rate_Dec = track_rate_Dec.convert_unit_to(unit_to_convert_to)
-
-#     return converted_track_rate_RA,converted_track_rate_Dec
 
 def rate_convertor(track_rate_RA,track_rate_Dec,input_unit,unit_to_convert_to):
     """
@@ -111,7 +102,3 @@ JPL_astropy_tbl,my_track_rate_RA,my_track_rate_Dec = JPL_Querier(target_id,obs_c
 converted_track_rate_RA,converted_track_rate_Dec = rate_convertor(my_track_rate_RA,my_track_rate_Dec,'h','s')
 print("TraRA: ",converted_track_rate_RA)
 print("TraDec: ",converted_track_rate_Dec)
-# my_converted_track_rate_RA,my_converted_track_rate_Dec = rate_convertor(my_track_rate_RA,my_track_rate_Dec,'arcsec/s')
-# print(my_converted_track_rate_RA)
-# print(my_converted_track_rate_Dec)
-
