@@ -18,7 +18,7 @@ def JPL_Querier(target_id,obs_code,date):
         Observatory code of format: '123'.
 
     date : Time
-        Time object of format: Time('yyyy-mm-dd hh:mm:ss').
+        Time object of format: Time('yyyy-mm-dd hh:mm:ss'), where time is in UT.
 
     Returns
     -------
@@ -91,14 +91,3 @@ def rate_convertor(track_rate_RA,track_rate_Dec,input_unit,unit_to_convert_to):
     converted_track_rate_RA_rounded = round(converted_track_rate_RA[0],4)
     converted_track_rate_Dec_rounded = round(converted_track_rate_Dec[0],4)
     return converted_track_rate_RA_rounded,converted_track_rate_Dec_rounded
-
-#---------------------
-
-target_id = 'C/2018 X2'
-obs_code = '474'
-date = Time('2021-07-03 07:00:00')
-
-JPL_astropy_tbl,my_track_rate_RA,my_track_rate_Dec = JPL_Querier(target_id,obs_code,date)
-converted_track_rate_RA,converted_track_rate_Dec = rate_convertor(my_track_rate_RA,my_track_rate_Dec,'h','s')
-print("TraRA: ",converted_track_rate_RA)
-print("TraDec: ",converted_track_rate_Dec)
