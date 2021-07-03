@@ -1,4 +1,4 @@
-# Telescope Tracking Rate
+# Non-Sidereal Tracking Rate Convertor
 
 This Python function queries JPL Horizons for an object and returns its RA and DEC non-sidereal tracking rates.
  
