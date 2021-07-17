@@ -69,18 +69,18 @@ def rate_convertor(track_rate_RA,track_rate_Dec,input_unit,unit_to_convert_to):
     """
     if unit_to_convert_to == 'h':
         if input_unit == 'm':
-            converted_track_rate_RA = track_rate_RA/60
-            converted_track_rate_Dec = track_rate_Dec/60
-        if input_unit == 's':
-            converted_track_rate_RA = track_rate_RA/3600
-            converted_track_rate_Dec = track_rate_Dec/3600
-    if unit_to_convert_to == 'm':
-        if input_unit == 'h':
             converted_track_rate_RA = track_rate_RA*60
             converted_track_rate_Dec = track_rate_Dec*60
         if input_unit == 's':
+            converted_track_rate_RA = track_rate_RA*3600
+            converted_track_rate_Dec = track_rate_Dec*3600
+    if unit_to_convert_to == 'm':
+        if input_unit == 'h':
             converted_track_rate_RA = track_rate_RA/60
             converted_track_rate_Dec = track_rate_Dec/60
+        if input_unit == 's':
+            converted_track_rate_RA = track_rate_RA*60
+            converted_track_rate_Dec = track_rate_Dec*60
     if unit_to_convert_to == 's':
         if input_unit == 'h':
             converted_track_rate_RA = track_rate_RA/3600
